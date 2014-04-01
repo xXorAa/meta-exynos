@@ -1,0 +1,24 @@
+From 5223d610f7804a8aa5d41c62e6937b67a58f584a Mon Sep 17 00:00:00 2001
+From: Graeme Gregory <graeme@xora.org.uk>
+Date: Tue, 1 Apr 2014 22:19:47 +0100
+Subject: [PATCH] arndale: enabled bootz command
+
+Signed-off-by: Graeme Gregory <graeme@xora.org.uk>
+---
+ include/configs/arndale.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/include/configs/arndale.h b/include/configs/arndale.h
+index 515facf..e9fb408 100644
+--- a/include/configs/arndale.h
++++ b/include/configs/arndale.h
+@@ -249,4 +249,6 @@
+ /* Enable Time Command */
+ #define CONFIG_CMD_TIME
+ 
++#define CONFIG_CMD_BOOTZ
++
+ #endif	/* __CONFIG_H */
+-- 
+1.9.1
+
