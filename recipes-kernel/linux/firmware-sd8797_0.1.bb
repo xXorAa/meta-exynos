@@ -13,5 +13,6 @@ do_install () {
 	install ${S}/sd8797_uapsta.bin ${D}/lib/firmware/mrvl/
 }
 
-FILES_${PN} = "/lib/firmware/sd8797_uapsta.bin"
+PACKAGE_ARCH = "all"
+FILES_${PN} = "/lib/firmware/mrvl/sd8797_uapsta.bin"
 
