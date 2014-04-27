@@ -22,6 +22,9 @@ UBOOT_SPL ?= "${MACHINE}-spl.bin"
 UBOOT_SPL_IMAGE ?= "u-boot-${MACHINE}-${PV}-${PR}-spl.bin"
 
 do_configure () {
+	if [ "${@base_contains('DISTRO_FEATURES', 'ld-is-gold', 'ld-is-gold', '', d)}" = "ld-is-gold" ] ; then
+		sed -i 's/$(CROSS_COMPILE)ld$/$(CROSS_COMPILE)ld.bfd/g' config.mk
+	fi
 	oe_runmake ${UBOOT_MACHINE}
 }
 
