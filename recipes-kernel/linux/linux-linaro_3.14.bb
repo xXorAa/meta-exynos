@@ -12,7 +12,7 @@ S = "${WORKDIR}/git"
 PV = "3.14.0"
 
 SRC_URI = "git://git.linaro.org/kernel/linux-linaro-tracking.git;protocol=http;branch=linux-linaro"
-SRCREV_pn-${PN} = "9e325161d87fbaf852d4f343bcaf1406f55dd161"
+SRCREV_pn-${PN} = "3f169e1854aa8b7b555391b661f13349920cfbbb"
 
 SRC_URI += " \
              file://defconfig \
