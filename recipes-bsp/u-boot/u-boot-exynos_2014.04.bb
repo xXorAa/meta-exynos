@@ -12,6 +12,7 @@ COMPATIBLE_MACHINE = "(arndale)"
 
 SRC_URI = "git://git.denx.de/u-boot.git \
 	   file://0001-arndale-enabled-bootz-command.patch \
+	   file://0002-Patch-to-get-the-arndale-board-booting-using-the-met.patch \
           "
 
 # v2014.04-rc3 release tag
