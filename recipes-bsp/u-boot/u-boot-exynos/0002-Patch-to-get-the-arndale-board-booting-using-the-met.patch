@@ -18,7 +18,7 @@ index e9fb408..463214b 100644
  
 +#define CONFIG_EXTRA_ENV_SETTINGS	\
 +	"set_bootargs=setenv bootargs root=/dev/mmcblk1p3 rw rootwait earlyprintk console=ttySAC2,115200n8 --no-log\0"	\
-+	"bootcmd=run set_bootargs; ext2load mmc 1:2 40007000 /zImage; ext2load mmc 1:2 42000000 /zImage.dtb; bootz 40007000 - 42000000\0"
++	"bootcmd=run set_bootargs; ext2load mmc 1:2 40007000 /zImage; ext2load mmc 1:2 42000000 /exynos5250-arndale.dtb; bootz 40007000 - 42000000\0"
 +
  #endif	/* __CONFIG_H */
 -- 

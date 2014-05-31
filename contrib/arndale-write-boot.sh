@@ -20,8 +20,8 @@ else
 fi
 
 if [ -n "$BL1" ]; then
-	echo sudo dd if=$BL1 of=$TARGET bs=512 seek=1
+	echo dd if=$BL1 of=$TARGET bs=512 seek=1
 fi
 
-echo sudo dd if=$SPL of=$TARGET bs=512 seek=17
-echo sudo dd if=$UBOOT of=$TARGET bs=512 seek=49
+echo dd if=$SPL of=$TARGET bs=512 seek=17
+echo dd if=$UBOOT of=$TARGET bs=512 seek=49
