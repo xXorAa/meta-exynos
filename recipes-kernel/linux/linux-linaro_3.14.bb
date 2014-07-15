@@ -11,7 +11,7 @@ S = "${WORKDIR}/git"
 
 PV = "3.14.0"
 
-SRC_URI = "git://git.linaro.org/kernel/linux-linaro-tracking.git;protocol=http;branch=linux-linaro"
+SRC_URI = "git://git.linaro.org/kernel/linux-linaro-tracking.git;protocol=http;nobranch=1"
 SRCREV_pn-${PN} = "3f169e1854aa8b7b555391b661f13349920cfbbb"
 
 SRC_URI += " \
