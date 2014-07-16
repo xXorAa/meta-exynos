@@ -1,0 +1,26 @@
+From 24500b33a43921ced993ce0850e244fe880d03ed Mon Sep 17 00:00:00 2001
+From: Matt Flax <flatmax@flatmax.org>
+Date: Fri, 30 May 2014 17:09:22 +1000
+Subject: [PATCH 2/2] Patch to get the arndale board booting using the
+ meta-exynos openembedded layer.
+
+---
+ include/configs/arndale.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/include/configs/arndale.h b/include/configs/arndale.h
+index e9fb408..463214b 100644
+--- a/include/configs/arndale.h
++++ b/include/configs/arndale.h
+@@ -251,4 +251,8 @@
+ 
+ #define CONFIG_CMD_BOOTZ
+ 
++#define CONFIG_EXTRA_ENV_SETTINGS	\
++	"set_bootargs=setenv bootargs root=/dev/mmcblk1p3 rw rootwait earlyprintk console=ttySAC2,115200n8 --no-log\0"	\
++	"bootcmd=run set_bootargs; ext2load mmc 1:2 40007000 /zImage; ext2load mmc 1:2 42000000 /exynos5250-arndale.dtb; bootz 40007000 - 42000000\0"
++
+ #endif	/* __CONFIG_H */
+-- 
+1.9.1
+
