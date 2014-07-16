@@ -15,6 +15,7 @@ FWENV = ""
 
 SRC_URI = "git://git.linaro.org/git/landing-teams/working/samsung/u-boot.git;protocol=http;branch=tracking-arndale_octa \
            ${FWENV} \
+           file://0001-Revert-armv7-Fix-error-with-hard-float-compiler.patch \
           "
 
 SRCREV = "0cc80dee4203027f3f1ce0a45b8940fc5757f322"

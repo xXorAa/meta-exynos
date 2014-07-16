@@ -1,0 +1,32 @@
+From 9e4d27cfc24949eca74bdaedfa7cd9b3ea11e483 Mon Sep 17 00:00:00 2001
+From: Tushar Behera <tushar.behera@linaro.org>
+Date: Fri, 21 Feb 2014 17:05:43 +0530
+Subject: [PATCH] Revert "armv7: Fix error with hard-float compiler"
+
+This reverts commit 6415bf60c44b2f726d066d627e34c9ac7290d46f.
+
+Android is using arm-linux-androideabi- toolchain, hence don't set
+the hardfloat option.
+
+Signed-off-by: Tushar Behera <tushar.behera@linaro.org>
+Signed-off-by: Maxin B. John <maxin.john@enea.com>
+---
+ arch/arm/cpu/armv7/config.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/cpu/armv7/config.mk b/arch/arm/cpu/armv7/config.mk
+index 3eb6d67..560c084 100644
+--- a/arch/arm/cpu/armv7/config.mk
++++ b/arch/arm/cpu/armv7/config.mk
+@@ -20,7 +20,7 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ # MA 02111-1307 USA
+ #
+-PLATFORM_RELFLAGS += -fno-common -ffixed-r8 -mfloat-abi=hard -mfpu=vfpv3
++PLATFORM_RELFLAGS += -fno-common -ffixed-r8 -msoft-float
+ 
+ # If armv7-a is not supported by GCC fall-back to armv5, which is
+ # supported by more tool-chains
+-- 
+1.9.1
+
