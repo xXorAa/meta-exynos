@@ -5,6 +5,7 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 inherit kernel siteinfo
+require recipes-kernel/linux/linux-yocto.inc
 
 # Specify the commandline for your device
 
@@ -171,8 +172,6 @@ do_install_append() {
 PACKAGES =+ "kernel-headers"
 FILES_kernel-headers = "${exec_prefix}/src/linux*"
 
-require recipes-kernel/linux/linux-dtb.inc
-
 FILES_kernel-devicetree += "/boot/*.dtb"
 
 RDEPENDS_kernel-image_append = " kernel-devicetree"
@@ -197,3 +196,5 @@ python () {
         depends = d.getVar('DEPENDS', False)
         d.setVar('DEPENDS', depends + ' lz4-native')
 }
+
+INSANE_SKIP_${PN} += "installed-vs-shipped"

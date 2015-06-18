@@ -1,4 +1,4 @@
-require u-boot-linaro.inc
+require recipes-bsp/u-boot/u-boot.inc
 
 # SPL build
 UBOOT_BINARY = "u-boot.bin"
